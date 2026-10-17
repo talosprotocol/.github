@@ -1,0 +1,90 @@
+name: "🐛 Bug Report"
+description: File a reproducible bug or unexpected behavior in the Talos Protocol ecosystem.
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting an issue! Please verify that your issue is not a security vulnerability. For security issues, please refer to [SECURITY.md](https://github.com/talosprotocol/.github/blob/main/SECURITY.md) to report privately.
+  - type: dropdown
+    id: component
+    attributes:
+      label: Affected Component / Repository
+      description: Which subproject or component is affected?
+      options:
+        - "talos (Umbrella monorepo)"
+        - "talos-core-rs (Cryptographic core & ratchets)"
+        - "talos-gateway / talos-ai-gateway"
+        - "talos-contracts (Smart contracts & verification)"
+        - "talos-audit-service (Immutable audit ledger)"
+        - "talos-governance-agent / talos-ai-chat-agent"
+        - "talos-mcp-connector / talos-ucp-connector"
+        - "talos-terminal-adapter"
+        - "talos-configuration / talos-dashboard / talos-tui"
+        - "talos-sdk-rust"
+        - "talos-sdk-go"
+        - "talos-sdk-ts"
+        - "talos-sdk-py"
+        - "talos-sdk-java"
+        - "talos-docs / Documentation"
+        - "Other"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the bug is.
+      placeholder: Describe what happened and why it is unexpected.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Provide precise, step-by-step instructions to reproduce the issue.
+      placeholder: |
+        1. Run '...'
+        2. Configure with '...'
+        3. Observe error '...'
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: A clear and concise description of what you expected to happen.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment & System Info
+      description: OS, architecture, Rust/Go/Node/Python version, container environment, etc.
+      placeholder: |
+        - OS: [e.g. Ubuntu 24.04, macOS 15, SteamOS]
+        - Arch: [e.g. x86_64, aarch64]
+        - Version/Commit SHA: [e.g. v0.5.2 or git sha]
+    validations:
+      required: false
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant Log Output or Stacktrace
+      description: Please copy and paste any relevant logs, terminal output, or backtraces.
+      render: shell
+    validations:
+      required: false
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct & Guidelines
+      description: Please confirm the following before submitting.
+      options:
+        - label: I have verified that this is not a duplicate of an existing issue.
+          required: true
+        - label: I have verified this report contains no private keys, passwords, or sensitive credentials.
+          required: true
+        - label: I agree to follow this project's [Code of Conduct](https://github.com/talosprotocol/.github/blob/main/CODE_OF_CONDUCT.md).
+          required: true

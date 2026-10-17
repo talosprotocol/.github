@@ -1,0 +1,69 @@
+name: "💡 Feature Request"
+description: Suggest an idea, enhancement, or new feature for the Talos Protocol ecosystem.
+title: "[Feature]: "
+labels: ["enhancement", "triage"]
+body:
+  - type: dropdown
+    id: component
+    attributes:
+      label: Target Component / Repository
+      description: Which subproject or component would this feature apply to?
+      options:
+        - "talos (Umbrella monorepo)"
+        - "talos-core-rs (Cryptographic core & ratchets)"
+        - "talos-gateway / talos-ai-gateway"
+        - "talos-contracts (Smart contracts & verification)"
+        - "talos-audit-service (Immutable audit ledger)"
+        - "talos-governance-agent / talos-ai-chat-agent"
+        - "talos-mcp-connector / talos-ucp-connector"
+        - "talos-terminal-adapter"
+        - "talos-configuration / talos-dashboard / talos-tui"
+        - "talos-sdk-rust"
+        - "talos-sdk-go"
+        - "talos-sdk-ts"
+        - "talos-sdk-py"
+        - "talos-sdk-java"
+        - "talos-docs / Documentation"
+        - "Other"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+      description: Is your feature request related to a problem or limitation? A clear and concise description of what the problem is.
+      placeholder: "I am always frustrated when..."
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution / Enhancement
+      description: A clear and concise description of what you want to happen and how it fits into the Talos architecture.
+      placeholder: "Describe the desired capability, API design, or protocol addition..."
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: A clear and concise description of any alternative solutions, designs, or features you've considered.
+    validations:
+      required: false
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional Context
+      description: Add any other context, diagrams, links, or screenshots about the feature request here.
+    validations:
+      required: false
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct & Guidelines
+      description: Please confirm the following before submitting.
+      options:
+        - label: I have searched existing issues to ensure this feature has not already been requested.
+          required: true
+        - label: I agree to follow this project's [Code of Conduct](https://github.com/talosprotocol/.github/blob/main/CODE_OF_CONDUCT.md).
+          required: true
